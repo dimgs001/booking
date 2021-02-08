@@ -27,7 +27,6 @@ def booking_list(request, null=None):
     else:
         print("empty")
 
-
     rooms_list = []
     booking_dict = {}
     rooms_distinct = Room.objects.all().distinct().order_by('title')
@@ -43,7 +42,6 @@ def booking_list(request, null=None):
 
 def admin_panel(request):
     username_authenticated_id = request.GET.get('username_authenticated_id', '')
-
     try:
         username_authenticated_id = int(username_authenticated_id)
     except:
@@ -88,7 +86,7 @@ def user_access_admin_table(request):
             user_access_object = UserAccess.objects.get(f_user=username_authenticated_id)
         except (ObjectDoesNotExist, MultipleObjectsReturned) as e:
             print("DoesNotExist")
-            return render(request, 'booking/forbidden_access.html')    ###############################################################
+            return render(request, 'booking/forbidden_access.html')
 
     user_access_objects = UserAccess.objects.all().order_by('f_user')
     booking_list = Booking.objects.all()
@@ -109,7 +107,6 @@ def booking_insert(request):
     else:
         print("empty")
 
-    ###################################################################
 
     booking_flag = request.GET.get('booking_flag', '')
     try:
@@ -242,19 +239,16 @@ def booking_delete(request, pk, admin_table_flag):
     else:
         print("empty")
 
-
     booking_flag = request.GET.get('booking_flag', '')
     try:
         booking_flag = int(booking_flag)
     except:
         booking_flag = 1
 
-
     try:
         admin_table_flag = int(admin_table_flag)
     except:
         admin_table_flag = False
-
 
     booking_objects = Booking.objects.all()
     if admin_table_flag != False:
@@ -351,7 +345,6 @@ def user_access_delete(request, pk, admin_table_flag):
             print("MultipleObjectsReturned")
     else:
         print("empty")
-
 
     try:
         admin_table_flag = int(admin_table_flag)

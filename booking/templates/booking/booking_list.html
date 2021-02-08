@@ -28,7 +28,7 @@
                                         {% for room in rooms_distinct %}
                                             <th>
                                                 <a href="{% url 'booking_detail' pk=room.pk %}?username_authenticated_id={{ user.pk }}&booking_flag=1">
-                                                    <span class="glyphicon glyphicon-calendar"></span> {{ room.title }}
+                                                    <span class="glyphicon glyphicon-bed"></span> {{ room.title }}
                                                 </a>
                                             </th>
                                         {% endfor %}

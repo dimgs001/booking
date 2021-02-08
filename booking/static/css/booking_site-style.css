@@ -165,7 +165,7 @@ div.about_process h1{
 }
 
 div.about_process h6{
-    margin-left: 30%;
+    margin-left: 38%;
     margin-top: 2em;
     color: grey;
     font-weight: bold;
@@ -178,19 +178,19 @@ div.forbidden_access{
 }
 
 div.forbidden_access h1{
-    margin-left: 20%;
+    margin-left: 25%;
     color: red;
     font-weight: bold;
 }
 
 div.forbidden_access h4{
-    margin-left: 5%;
+    margin-left: 15%;
     color: grey;
     font-weight: bold;
 }
 
 div.forbidden_access h5{
-    margin-left: 10%;
+    margin-left: 28%;
     color: grey;
     font-weight: bold;
 }
