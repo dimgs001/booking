@@ -3,7 +3,7 @@
 
 {% load bootstrap4 %}
 {% bootstrap_css %}
-{% bootstrap_javascript jquery='full' %}
+{% bootstrap_javascript jquery='full' %} <!-- for datepicker -->
 
 {{ form.media }}
 
@@ -16,11 +16,9 @@
        <title>Lorem Ipsum Bookings</title>
 
        <!-------- CSS ------->
-       <link rel="stylesheet" href="{% static 'css/smart_city-style.css' %}">
+       <link rel="stylesheet" href="{% static 'css/booking_site-style.css' %}">
        <link rel="stylesheet" href="{% static 'css/components.css' %}">
        <link rel="stylesheet" href="{% static 'css/responsee.css' %}">
-       <link rel="stylesheet" href="{% static 'owl-carousel/owl.carousel.css' %}">
-       <link rel="stylesheet" href="{% static 'owl-carousel/owl.theme.css' %}">
 
        <!-- CUSTOM STYLE -->
        <link rel="stylesheet" href="{% static 'css/template-style.css' %}">
@@ -50,13 +48,6 @@
 
        <!-- For Bootstrap Dropdown Menu -->
        <script src="https://netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-
-       <script type="text/javascript" src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
-       <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
-       <script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script>
-       <script type="text/javascript" src="{% static 'js/responsee.js' %}"></script>
-
    </head>
 
    <body class="size-1140">
@@ -81,7 +72,7 @@
                                 <span class="glyphicon glyphicon-user"></span>
                                 <span id="welcome_message"> Welcome, {{ user.username }}</span>
                                 <span id="logout-btn" class="glyphicon glyphicon-off">
-                                    <a href="{% url 'logout' %}"> Logout</a>
+                                    <a href="{% url 'logout' %}">Logout</a>
                                  </span>
                         {% else %}
                                 <span class="glyphicon glyphicon-user"></span>
@@ -94,7 +85,8 @@
                                     <span id="control_panel_link" class="glyphicon glyphicon-cog"></span>
                                 </a>
                         {% endif %}
-                </div>
+                        <a href="{% url 'about' %}"><button type="button" class="btn btn-link">About</button></a>
+                 </div>
 
 
             <!-- ################################################################################################################### -->
@@ -113,33 +105,12 @@
             </nav> <!-- expand -->
 
 
-
-
-
             <!-- Whole content --> <!-- This tag closes to other block .html files -->
-            <div class="gallery-whole-content">
+            <div class="booking_list-whole-content">
 
-                    <!-- ************************************************* -->
-
-
-                        <!-- MAIN_PART block -->
-                        {% block main_part %}
-                        {% endblock %}
-
-
-
-
-                <!-- FOOTER -->
-                <footer class="footer">
-                    <div class="line">
-                        <div class="s-12 l-6">
-                            <p>Copyright &copy; 2021 Dimitris Tsiaousidis</p>
-                        </div>
-                        <div class="s-12 l-6">
-                            <p class="right"></p>
-                        </div>
-                    </div>
-                </footer>
+                <!-- MAIN_PART block -->
+                {% block main_part %}
+                {% endblock %}
 
     </body>
 </html>

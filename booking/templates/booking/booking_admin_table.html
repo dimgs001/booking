@@ -10,19 +10,18 @@
 {% block main_part %}
 
 <!-- <section>  --> <!-- This is located to base.html -->
-    <!-- <div class="gallery-whole-content"> --> <!-- This is located to base.html -->
+    <!-- <div class="booking_list-whole-content"> --> <!-- This is located to base.html -->
         <!-- MAIN CONTENT -->
 
-        <div class="gallery-main-content">
+        <div class="main-content">
             <div class="container-fluid">
 
                 <div class="row">
 
-                    <div class="col-xl-3">
+                    <div class="col-xl-5">
                     </div>
 
                     {% if booking_objects %}
-                        <!-- Information -->
                         <div class="col-xl">
                             <table class="table table-striped">
                                 <a href="{% url 'booking_insert' %}?username_authenticated_id={{ user.pk }}"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Add Booking</button></a>
@@ -58,7 +57,7 @@
             </div>
         </div>
 
-    </div> <!-- gallery-whole-content -->
+    </div> <!-- booking_list-whole-content -->
 </section>
 
 {% endblock %}

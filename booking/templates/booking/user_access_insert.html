@@ -8,9 +8,9 @@
 
 {% block main_part %}
 <!-- <section> --> <!-- This is located to base.html -->
-    <!-- <div class="gallery-whole-content"> --> <!-- This is located to base.html -->
+    <!-- <div class="booking_list-whole-content"> --> <!-- This is located to base.html -->
 
-        <div class="gallery-main-content">
+        <div class="main-content">
             <div class="container-fluid">
 
                 <div class="row">
@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="col-xl">
-                        <div id="jumbotron-login-page" class="jumbotron">
+                        <div id="jumbotron-crud-page" class="jumbotron">
                             <div class="input-group">
                                 <form method="POST" class="post-form" enctype="multipart/form-data">
                                     {% csrf_token %}
@@ -41,6 +41,6 @@
                         </div>
                     </div>
 
-    </div> <!-- gallery-whole-content -->
+    </div> <!-- booking_list-whole-content -->
 </section>
 {% endblock %}

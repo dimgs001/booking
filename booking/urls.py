@@ -8,6 +8,7 @@ from django.conf import settings
 urlpatterns = [
     url(r'^$', views.booking_list, name='index'),
     url(r'^home/$', views.booking_list, name='home'),
+    url(r'^about/$', views.about, name='about'),
     url(r'^booking_list/$', views.booking_list, name='booking_list'),
 
     url(r'^admin_panel$', views.admin_panel, name='admin_panel'),

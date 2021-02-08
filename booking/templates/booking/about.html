@@ -1,0 +1,41 @@
+{% extends 'booking/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block header %}
+    ABOUT
+{% endblock %}
+
+{% block main_part %}
+<!-- <section> --> <!-- This is located to base.html -->
+    <!-- <div class="booking_list-whole-content"> --> <!-- This is located to base.html -->
+
+
+        <div class="main-content">
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-xl-4">
+                    </div>
+
+                    <div class="col-xl">
+                        <div class='about_process'>
+                            <pre>My name is Dimitris Tsiaousidis and I am the developer of this Booking Website.
+I hope to create more fabulous and exciting applications with Boss Info!</pre>
+                            <a href="{% url 'home' %}?username_authenticated_id={{ user.pk }}&room_flag=1">
+                                <h6>Return to Home</h6>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- booking_list-whole-content -->
+</section>
+{% endblock %}

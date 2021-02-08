@@ -8,9 +8,9 @@
 
 {% block main_part %}
 <!-- <section> --> <!-- This is located to base.html -->
-    <!-- <div class="gallery-whole-content"> --> <!-- This is located to base.html -->
+    <!-- <div class="booking_list-whole-content"> --> <!-- This is located to base.html -->
 
-        <div class="gallery-main-content">
+        <div class="main-content">
             <div class="container-fluid">
 
                 <div class="row">
@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="col-xl">
-                        <div class='request_successful_insert'>
+                        <div class='successful_process'>
                             <h1>Successful Entry!</h1>
                             {% if user_access_object.f_access.title == 'Administrator' %}
                                 <a href="{% url 'booking_admin_table' %}?username_authenticated_id={{ user.pk }}&booking_flag=1">
@@ -35,6 +35,6 @@
             </div>
         </div>
 
-    </div> <!-- gallery-whole-content -->
+    </div> <!-- booking_list-whole-content -->
 </section>
 {% endblock %}

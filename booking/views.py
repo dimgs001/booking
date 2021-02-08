@@ -2,11 +2,15 @@ from .models import *
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.exceptions import MultipleObjectsReturned
 from .forms import BookingForm, UserAccessForm, RoomForm
-from django.shortcuts import render, get_object_or_404 # redirect,
+from django.shortcuts import render, get_object_or_404
 
 
 def home(request):
     return render(request, 'booking/index.html', {})
+
+
+def about(request):
+    return render(request, 'booking/about.html', {})
 
 
 def booking_list(request, null=None):

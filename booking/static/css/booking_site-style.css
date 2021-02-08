@@ -1,0 +1,224 @@
+/* No results */
+#no_results{
+    color:#000000;
+    font-size: 38px;
+    font-weight: bold;
+    margin-top: 20%;
+    margin-left: 3%;
+}
+
+.booking_list-whole-content{
+    padding-top: 2em;
+    display: block;
+    width: 100%;
+    min-height: 100em;
+    color: #000000;
+    background-image: url('../img/background-image.png');
+}
+
+.main-content {
+    display: block;
+    padding: 0;
+}
+
+#login-btn{
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+}
+
+/* CRUD: Create Read Update Delete */
+#jumbotron-crud-page {
+    max-width: 50em;
+    padding-top: 0;
+    padding-bottom: auto;
+}
+
+#jumbotron-crud-page button{
+    margin-top: 3em;
+    width: 100%;
+}
+
+#jumbotron-crud-page label{
+    margin-top: 2em;
+}
+
+#jumbotron-signup-page {
+    max-width: 50em;
+    min-width: 10em;
+    padding-top: 5px;
+    padding-bottom: auto;
+}
+
+#jumbotron-signup-page button{
+    margin-top: 3em;
+    width: 100%;
+}
+
+/* Forms */
+div.form-group {
+    margin-top: 30px;
+}
+
+/* Tables */
+.table {
+    display: block;
+    overflow-x: auto;
+    border: none;
+}
+
+
+div.admin-panel{
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+}
+
+div.admin-panel h3{
+    text-align: justify;
+    margin-top: 10px;
+    margin-left: 30%;
+    padding: 0;
+}
+
+div.admin-panel a{
+    color: dimgrey;
+    padding: 0;
+}
+
+/* "alert" is style of Bootstrap buttons */
+div.alert{
+    width: 100%;
+    padding: 0;
+}
+
+/* The main Title - booking_detail.html */
+div.header-title h1 {
+    font-family: 'Bree Serif', serif;
+    display: block;
+    background-color: darkgrey;
+    color: #ffffff;
+    margin: 30px 30px 30px 0;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+/* booking_detail.html */
+div.information {
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px lightslategrey;
+    margin: auto 20px auto 0;
+    width: 100%;
+}
+
+/* booking_detail.html */
+div.information td{
+    font-size: 17px;
+}
+
+/* user_access_insert.html */
+.input-group{
+    margin-bottom: 10px;
+}
+
+/* admin_panel.html */
+div.admin-panel{
+    margin-top: 5em;
+}
+/* admin_panel.html */
+div.admin-panel h1{
+    color: grey;
+}
+
+div.successful_process{
+    margin-left: 10%;
+    padding-top: 2em;
+    padding-bottom: 15em;
+}
+
+div.successful_process h1{
+    margin-left:7%;
+    color: green;
+    font-weight: bold;
+}
+
+div.successful_process h6{
+    margin-left: 13%;
+    margin-top: 2em;
+    color: grey;
+    font-weight: bold;
+}
+
+div.about_process{
+    margin-left: 10%;
+    padding-top: 2em;
+    padding-bottom: 15em;
+}
+
+div.about_process h1{
+    margin-left:7%;
+    color: green;
+    font-weight: bold;
+}
+
+div.about_process h6{
+    margin-left: 30%;
+    margin-top: 2em;
+    color: grey;
+    font-weight: bold;
+}
+
+/* forbidden_access.html */
+div.forbidden_access{
+    padding-top: 3em;
+    padding-bottom: 15em;
+}
+
+div.forbidden_access h1{
+    margin-left: 20%;
+    color: red;
+    font-weight: bold;
+}
+
+div.forbidden_access h4{
+    margin-left: 5%;
+    color: grey;
+    font-weight: bold;
+}
+
+div.forbidden_access h5{
+    margin-left: 10%;
+    color: grey;
+    font-weight: bold;
+}
+
+/* Home button */
+#home_page_link{
+    margin-left: 10px;
+    width: 7em;
+}
+
+/* base.html */
+div.infobar{
+    display: inline-block;
+}
+
+/* base.html */
+div.infobar2{
+    display: inline-block;
+    text-align: right;
+}
+
+/* Logout button */
+#logout-btn{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* base.html */
+.footer{
+    margin-top: 20%;
+}
