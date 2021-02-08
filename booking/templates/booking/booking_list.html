@@ -1,0 +1,106 @@
+{% extends 'booking/base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+
+{% block header %}
+  BOOKINGS
+{% endblock %}
+
+{% block main_part %}
+
+<!-- <section>  --> <!-- This is located to base.html -->
+    <!-- <div class="gallery-whole-content"> --> <!-- This is located to base.html -->
+        <!-- MAIN CONTENT -->
+        <div class="gallery-main-content">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-xl-3">
+                    </div>
+
+                    {% if rooms_distinct %}
+                        <!-- Information -->
+                        <div class="col-xl">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+
+                                        {% for room in rooms_distinct %}
+                                            <th>
+                                                <a href="{% url 'booking_detail' pk=room.pk %}?username_authenticated_id={{ user.pk }}&booking_flag=1">
+                                                    <span class="glyphicon glyphicon-calendar"></span> {{ room.title }}
+                                                </a>
+                                            </th>
+                                        {% endfor %}
+
+                                        <tr>
+                                        {% for key, value in booking_dict.items %}
+                                            <td>
+                                            {% for v in value %}
+                                                <pre><h5><span class="glyphicon glyphicon-calendar"></span> {{v.date_from}} - {{v.date_to}} ({{ v.f_user }})</h5></pre>
+                                            {% endfor %}
+                                            </td>
+                                        {% endfor %}
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    <!--
+                        {% for room in rooms_distinct %}
+                            {% if room.photo %}
+                                <div class="col-md-4">
+                                    <div class="thumbnail">
+                                        <a href="{% url 'booking_detail' pk=room.pk %}?username_authenticated_id={{ user.pk }}&room_id={{ room.pk }}&booking_flag=1">
+                                            <img src="{{ room.photo.url }}" alt="{{ room.title }}">
+                                            <div class="caption">
+                                                <p>
+                                                    {{ room.title }}
+                                                </p>
+                                                <p>
+                                                    {{ booking_obj.date_from }} - {{ booking_obj.date_to }}
+                                                    &nbsp;
+                                                    &diams;
+                                                    &nbsp;
+                                                    {{ booking_obj.f_user }}
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                 </div>
+                            {% endif %}
+                        {% endfor %}
+                    -->
+                    {% else %}
+                        <div class="col-xl-4">
+                        </div>
+
+                        <div class="col-xl-4">
+                            <h1 id="no_results">No results</h1>
+                        </div>
+
+                        <div class="col-xl-4">
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+       </div>
+    </div> <!-- gallery-whole-content -->
+</section>
+
+{% endblock %}
+
+<!--
+<script>
+  $(function () {
+    $("#datetimepicker1").datetimepicker({
+      format: 'DD/MM/YYYY HH:mm',
+    });
+  });
+</script>
+-->

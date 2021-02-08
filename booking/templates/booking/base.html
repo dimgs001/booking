@@ -1,0 +1,145 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{{ form.media }}
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+       <title>Lorem Ipsum Bookings</title>
+
+       <!-------- CSS ------->
+       <link rel="stylesheet" href="{% static 'css/smart_city-style.css' %}">
+       <link rel="stylesheet" href="{% static 'css/components.css' %}">
+       <link rel="stylesheet" href="{% static 'css/responsee.css' %}">
+       <link rel="stylesheet" href="{% static 'owl-carousel/owl.carousel.css' %}">
+       <link rel="stylesheet" href="{% static 'owl-carousel/owl.theme.css' %}">
+
+       <!-- CUSTOM STYLE -->
+       <link rel="stylesheet" href="{% static 'css/template-style.css' %}">
+
+       <!-- GOOGLE FONTS -->
+       <!-- Art Logo -->
+       <link href="https://fonts.googleapis.com/css?family=Euphoria+Script" rel="stylesheet">
+       <!-- #head Title -->
+       <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
+       <!--  Main Menu (Home - Smart City - Contact) - ".top-nav a" - "template-style.css" -->
+       <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab" rel="stylesheet">
+       <!-- Left Sidebar (whole) - ".smart_city-left-sidebar"  - "template-style.css" -->
+       <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+       <!-- Title of requests(smart_city.html) and Title of requests(request_detail.html) - "template-style.css" -->
+       <link href="https://fonts.googleapis.com/css?family=Cherry+Swash" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+       <!-- Google glyphicons -->
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+       <!-- BOOTSTRAP -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+       <!-- For Bootstrap Dropdown Menu -->
+       <script src="https://netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+       <script type="text/javascript" src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/responsee.js' %}"></script>
+
+   </head>
+
+   <body class="size-1140">
+       <section> <!-- This tag closes to other blocks .html files -->
+
+            <!-- As a heading -->
+            <nav class="navbar navbar-dark bg-dark">
+              <span class="navbar-brand mb-0 h1">
+                {% block header %}
+                {% endblock %}
+              </span>
+            </nav>
+
+            <!-- Horizontal Menu -->
+                <div class="col-md-6 infobar">
+                        <a class="nav-link" id="home_page_link" href="{% url 'booking_list' %}?username_authenticated_id={{ user.pk }}"><span class="glyphicon glyphicon-home"></span> Home</a>
+                </div>
+
+                <div class="col-md-6 infobar2">
+                        <!-- Login / Logout / Signup links-->
+                        {% if user.is_authenticated %}
+                                <span class="glyphicon glyphicon-user"></span>
+                                <span id="welcome_message"> Welcome, {{ user.username }}</span>
+                                <span id="logout-btn" class="glyphicon glyphicon-off">
+                                    <a href="{% url 'logout' %}"> Logout</a>
+                                 </span>
+                        {% else %}
+                                <span class="glyphicon glyphicon-user"></span>
+                                <a id="login-btn" class="btn btn-success btn-lg" role="button" href="{% url 'login' %}" style="color:white">Login </a>
+                                <a href="{% url 'signup' %}"><button type="button" class="btn btn-link">Signup</button></a>
+                        {% endif %}
+                        <!-- Control panel button -->
+                        {% if user_access_object.f_access.title == 'Administrator' %}
+                                <a href="{% url 'admin_panel' %}?username_authenticated_id={{ user.pk }}">
+                                    <span id="control_panel_link" class="glyphicon glyphicon-cog"></span>
+                                </a>
+                        {% endif %}
+                </div>
+
+
+            <!-- ################################################################################################################### -->
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+
+
+                    </ul>
+
+                </div> <!-- collapse -->
+            </nav> <!-- expand -->
+
+
+
+
+
+            <!-- Whole content --> <!-- This tag closes to other block .html files -->
+            <div class="gallery-whole-content">
+
+                    <!-- ************************************************* -->
+
+
+                        <!-- MAIN_PART block -->
+                        {% block main_part %}
+                        {% endblock %}
+
+
+
+
+                <!-- FOOTER -->
+                <footer class="footer">
+                    <div class="line">
+                        <div class="s-12 l-6">
+                            <p>Copyright &copy; 2021 Dimitris Tsiaousidis</p>
+                        </div>
+                        <div class="s-12 l-6">
+                            <p class="right"></p>
+                        </div>
+                    </div>
+                </footer>
+
+    </body>
+</html>
